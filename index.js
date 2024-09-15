@@ -146,29 +146,11 @@ console.log(students);*/
 //     console.log("You are not a student");
 // }
 
-let age;
-document.getElementById("myButton").onclick = function(){
-    age = document.getElementById("myText").value;
-    if (age >= 100){
-        document.getElementById("resultText").textContent = "You are too OLD to enter this site";
-    }
-    else if (age == 0){
-        document.getElementById("resultText").textContent = "You can't enter. You were just born.";
-    }
-    else if (age >=18){
-        document.getElementById("resultText").textContent = "You are old enough to enter this site!";
-    }
-    else if (age < 0){
-        document.getElementById("resultText").textContent = "Your age can't be less than 0.";
-    }
-    else{
-         document.getElementById("resultText").textContent = "You must be 18+ to enter this site.";
-    }
-    
+function happyBirthday(userName, age){
+    console.log("Happy Birthday to you!");
+    console.log("Happy Birthday to you!");
+    console.log(`Happy Birthday dear ${userName}!`);
+    console.log(`Happy Birthday to you! You are ${age} years old`);
 }
 
-
-
-
-
-
+happyBirthday("Samarpan", 25);
