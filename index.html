@@ -23,25 +23,34 @@
     <button id = "myButton">Submit</button>
     </div>
     <p id = "resultText"></p> -->
-    
-    <input type = "checkbox" id = "myCheckBox">
-    <label for = "myCheckBox">Subscribe</label><br><br>
 
-    <input type = "radio" id = "myVisa" name = "card">
-    <label for = "myVisa">Visa</label><br>
+    <h1>Temperature Conversion</h1>
 
-    <input type = "radio" id = "myMasterCard" name = "card">
-    <label for = "myMasterCard">MasterCard</label><br>
+    <form>
+    <input type = "number" id = "textBox" value = 0>
+    <button type = "button" onclick= "convert()">Convert</button><br>
+    </br>
+    <p id = "result"> Select a unit</p>
 
-    <input type = "radio" id = "myPayPal" name = "card">
-    <label for = "myPayPal">PayPal</label><br><br>
+    <input type = "radio" id = "CelciustoFarenheit" name = "unit">
+    <label for = "CelciusToFarenheit">Celcius → Farenheit</label></br>
 
-    <div id = "btnContainer">
-    <button id = "mySubmit">Submit</button>
-    </div>
-    
-    <p id = "subResult"></p>
-    <p id = "paymentResult"></p>
-    <script src  = "radio.js"></script>    
+    <input type = "radio" id = "KelvinToFarenheit" name = "unit">
+    <label for = "KelvinToFarenheit">Kelvin → Farenheit</label><br>
+
+    <input type = "radio" id = "FarenheitToCelcius" name = "unit">
+    <label for = "FarenheitoCelcius">Farenheit → Celcius</label><br>
+
+    <input type = "radio" id = "KelvinToCelcius" name = "unit">
+    <label for = "KelvinToCelcius">Kelvin → Celcius</label><br>
+
+    <input type = "radio" id = "FarenheitToKelvin" name = "unit">
+    <label for = "FarenheitToKelvin">Farenheit → Kelvin</label><br>
+
+    <input type = "radio" id = "CelciusToKelvin" name = "unit">
+    <label for = "CelciusToKelvin">Celcius → Kelvin</label><br><br>
+
+    </form>
+    <script src  = "Temp.js"></script>    
 </body>
 </html>
