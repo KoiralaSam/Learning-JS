@@ -146,11 +146,86 @@ console.log(students);*/
 //     console.log("You are not a student");
 // }
 
-function happyBirthday(userName, age){
-    console.log("Happy Birthday to you!");
-    console.log("Happy Birthday to you!");
-    console.log(`Happy Birthday dear ${userName}!`);
-    console.log(`Happy Birthday to you! You are ${age} years old`);
+// function happyBirthday(userName, age){
+//     console.log("Happy Birthday to you!");
+//     console.log("Happy Birthday to you!");
+//     console.log(`Happy Birthday dear ${userName}!`);
+//     console.log(`Happy Birthday to you! You are ${age} years old`);
+// }
+
+// happyBirthday("Samarpan", 25);
+
+// function isEven(number){
+//     return number % 2 == 0 ? true: false;
+// }
+// console.log(isEven(16)); 
+
+// function isValidEmail(Email){
+//     return Email.includes("@") == true ? true : false;
+// }
+// console.log(isValidEmail("Samgmail.com"));
+
+// const textBox = document.getElementById("textBox");
+// const CelciustoFarenheit = document.getElementById("CelciustoFarenheit");
+// const KelvinToFarenheit = document.getElementById("KelvinToFarenheit");
+// const FarenheitToCelcius = document.getElementById("FarenheitToCelcius");
+// const KelvinToCelcius = document.getElementById("KelvinToCelcius");
+// const FarenheitToKelvin = document.getElementById("FarenheitToKelvin");
+// const CelciusToKelvin = document.getElementById("CelciusToKelvin");
+// const result = document.getElementById("result");
+// let temp;
+
+// function convert(){
+//     if(CelciustoFarenheit.checked){
+//         temp = Number(textBox.value);
+//         temp = temp  * 9 / 5 + 32;
+//         result.textContent = temp.toFixed(2) + "°F";
+//     }
+//     else if(KelvinToFarenheit.checked){
+//         temp = Number(textBox.value);
+//         temp = (temp - 273.15) * (9/5) + 32;
+//         result.textContent = temp.toFixed(2) + "°F";
+//     }
+//     else if(FarenheitToCelcius.checked){
+//         temp = Number(textBox.value);
+//         temp = (temp - 32) * (5/9);
+//         result.textContent = temp.toFixed(2) + "°C";
+//     }
+//     else if(KelvinToCelcius.checked){
+//         temp = Number(textBox.value);
+//         temp = (temp - 273.15);
+//         result.textContent = temp.toFixed(2) + "°C";
+//     }
+//     else if(FarenheitToKelvin.checked){
+//         temp = Number(textBox.value);
+//         temp = (temp - 32) * (5.9) + 273.15;
+//         result.textContent = temp.toFixed(2) + "K";
+//     }
+//     else if(CelciusToKelvin.checked){
+//         temp = Number(textBox.value);
+//         temp = (temp + 273.15);
+//         result.textContent = temp.toFixed(2) + "K";
+//     }
+//     else{
+//         result.textContent = "Please Select a Unit";
+//     }
+// }
+
+const food1 = "Hamburger";
+ const food2 = "Pizza";
+ const food3 = "Sushi";
+ const food4 = "hotdog";
+ const food5 = "ramen";
+
+
+function getFoods(...foods){
+   return foods;
 }
 
-happyBirthday("Samarpan", 25);
+ function openFridge(...foods){
+    console.log(...foods);
+ }
+
+ const foods = getFoods(food1, food2, food3, food4, food5);
+
+ openFridge(food1, food2, food3, food4, food5);
