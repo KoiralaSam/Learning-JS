@@ -1,53 +1,28 @@
-
-body{
-    font-family: Georgia, Times New Roman;
-    background-color: rgb(238, 219, 219);
-    text-align: center;
-}
-
-h1{
-    color: rgb(27, 27, 26);
-}
-
-form{
-    background-color: white;
-    text-align: center;
-    max-width: 350px;
-    margin: auto;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: rgb(100, 52, 52);
-}
-
-#textBox{
-    width: 130px;
+#container{
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     font-size: 2em;
-    border: 2px;
-    border-radius: 4px;
-    margin-bottom: 15px;
-}
-label{
-    font-size: 1.5em;
     font-weight: bold;
 }
 button{
-    margin-top: 15px;
-    background-color: rgb(222, 125, 8);
-    color: rgb(145, 44, 44);
     font-size: 1.5em;
-    border: none;
     padding: 10px 15px;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(41, 177, 214);
+    color:rgb(5, 48, 84);
+    font-weight: bold;
     cursor: pointer;
 }
-
 button:hover{
-    background-color: rgb(63, 12, 12);
+    background-color: aqua;
 }
- 
-#result{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.75em;
+button:active{
+    background-color: aquamarine;
+}
+input{
+    font-size: 2rem;
+    width: 150px;
+    text-align: center;
     font-weight: bold;
 }
