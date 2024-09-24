@@ -229,20 +229,51 @@ console.log(students);*/
 //  const foods = getFoods(food1, food2, food3, food4, food5);
 
 //  openFridge(food1, food2, food3, food4, food5);
-function rollDice(){
+// function rollDice(){
 
-    const numOfDice = document.getElementById("numOfDice").value;
-    const diceResult = document.getElementById("diceResult");
-    const diceImages = document.getElementById("diceImages");
-    const values = [];
-    const images = [];
+//     const numOfDice = document.getElementById("numOfDice").value;
+//     const diceResult = document.getElementById("diceResult");
+//     const diceImages = document.getElementById("diceImages");
+//     const values = [];
+//     const images = [];
 
-    for(let i = 0; i<numOfDice; i++){
-        const ranVal = Math.floor(Math.random() * 6 + 1);
-        values.push(ranVal);
-        images.push(`<img src = "/${ranVal}.png">`);
+//     for(let i = 0; i<numOfDice; i++){
+//         const ranVal = Math.floor(Math.random() * 6 + 1);
+//         values.push(ranVal);
+//         images.push(`<img src = "/${ranVal}.png">`);
+//     }
+
+//     diceResult.textContent = `dice: ${values.join(", ")}`;
+//     diceImages.innerHTML  = images.join('');
+//  }
+
+function generatePassword(length, hasUpper, hasLower, hasSymbols, hasNumbers){
+    const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const lower = "abcdefghijklmnopqrstuvwxyz";
+    const symbols = "!@#$%^&*()_";
+    const numbers = "1234567890";
+    let password = "";
+
+    let availStr = "";
+    availStr += hasUpper ? upper : ''; 
+    availStr += hasLower ? lower : ''; 
+    availStr += hasSymbols ? symbols : ''; 
+    availStr += hasNumbers ? numbers : ''; 
+
+    for (let i = 0; i < length; i++){
+        const randNum = Math.floor(Math.random() * availStr.length);
+        password += availStr[randNum];
+        console.log(randNum);
     }
+    return password;
+}
 
-    diceResult.textContent = `dice: ${values.join(", ")}`;
-    diceImages.innerHTML  = images.join('');
- }
+const length = 12;
+const hasUpper = true;
+const hasLower = true;
+const hasSymbols = true;
+const hasNumbers = true; 
+
+const password = generatePassword(length, hasUpper, hasLower, hasSymbols, hasNumbers);
+
+console.log(password);
