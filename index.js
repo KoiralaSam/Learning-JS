@@ -260,18 +260,25 @@ function generatePassword(length, hasUpper, hasLower, hasSymbols, hasNumbers){
     availStr += hasSymbols ? symbols : ''; 
     availStr += hasNumbers ? numbers : ''; 
 
+    if(length < 1){
+        return `Password length must be at least 1`;
+    }
+
+    if (availStr.length === 0){
+        return `At least one set of character needs to be selected!`;
+    }
+
     for (let i = 0; i < length; i++){
         const randNum = Math.floor(Math.random() * availStr.length);
         password += availStr[randNum];
-        console.log(randNum);
     }
     return password;
 }
 
-const length = 12;
-const hasUpper = true;
-const hasLower = true;
-const hasSymbols = true;
+const length = 100;
+const hasUpper = false;
+const hasLower = false;
+const hasSymbols = false;
 const hasNumbers = true; 
 
 const password = generatePassword(length, hasUpper, hasLower, hasSymbols, hasNumbers);
