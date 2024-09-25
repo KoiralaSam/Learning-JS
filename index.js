@@ -288,22 +288,45 @@ console.log(students);*/
 //CALLBACKS and for each
 //for each provides element, index and array to the callback function within.
 
-let numbers = [1,2,3,4,5];
-numbers.forEach(cube);
-numbers.forEach(display);
+// let numbers = [1,2,3,4,5];
+// numbers.forEach(cube);
+// numbers.forEach(display);
 
-function double(element, index, array){
-    array[index] = 2 * element;
+// function double(element, index, array){
+//     array[index] = 2 * element;
+// }
+
+// function square(element, index, array){
+//     array[index] = Math.pow(element, 2);
+// }
+
+// function cube(element, index, array){
+//     array[index] = Math.pow(element, 3);
+// }
+
+// function display(element){
+//     console.log(element);
+// }
+
+let fruits = ["apple", "orange", "banana", "kiwi"]
+
+fruits.forEach(uppercase);
+fruits.forEach(lowerCase);
+fruits.forEach(capitalize);
+fruits.forEach(display);
+
+
+function uppercase(element, index, array){
+    array[index] = element.toUpperCase();
 }
 
-function square(element, index, array){
-    array[index] = Math.pow(element, 2);
+function lowerCase(element, index, array){
+    array[index] = element.toLowerCase();
 }
 
-function cube(element, index, array){
-    array[index] = Math.pow(element, 3);
+function capitalize(element, index, array){
+    array[index] = element.charAt(0).toUpperCase() + element.substring(1);
 }
-
 function display(element){
     console.log(element);
 }
