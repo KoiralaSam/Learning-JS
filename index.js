@@ -247,40 +247,63 @@ console.log(students);*/
 //     diceImages.innerHTML  = images.join('');
 //  }
 
-function generatePassword(length, hasUpper, hasLower, hasSymbols, hasNumbers){
-    const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const lower = "abcdefghijklmnopqrstuvwxyz";
-    const symbols = "!@#$%^&*()_";
-    const numbers = "1234567890";
-    let password = "";
+// function generatePassword(length, hasUpper, hasLower, hasSymbols, hasNumbers){
+//     const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//     const lower = "abcdefghijklmnopqrstuvwxyz";
+//     const symbols = "!@#$%^&*()_";
+//     const numbers = "1234567890";
+//     let password = "";
 
-    let availStr = "";
-    availStr += hasUpper ? upper : ''; 
-    availStr += hasLower ? lower : ''; 
-    availStr += hasSymbols ? symbols : ''; 
-    availStr += hasNumbers ? numbers : ''; 
+//     let availStr = "";
+//     availStr += hasUpper ? upper : ''; 
+//     availStr += hasLower ? lower : ''; 
+//     availStr += hasSymbols ? symbols : ''; 
+//     availStr += hasNumbers ? numbers : ''; 
 
-    if(length < 1){
-        return `Password length must be at least 1`;
-    }
+//     if(length < 1){
+//         return `Password length must be at least 1`;
+//     }
 
-    if (availStr.length === 0){
-        return `At least one set of character needs to be selected!`;
-    }
+//     if (availStr.length === 0){
+//         return `At least one set of character needs to be selected!`;
+//     }
 
-    for (let i = 0; i < length; i++){
-        const randNum = Math.floor(Math.random() * availStr.length);
-        password += availStr[randNum];
-    }
-    return password;
+//     for (let i = 0; i < length; i++){
+//         const randNum = Math.floor(Math.random() * availStr.length);
+//         password += availStr[randNum];
+//     }
+//     return password;
+// }
+
+// const length = 100;
+// const hasUpper = false;
+// const hasLower = false;
+// const hasSymbols = false;
+// const hasNumbers = true; 
+
+// const password = generatePassword(length, hasUpper, hasLower, hasSymbols, hasNumbers);
+
+// console.log(password);
+
+//CALLBACKS and for each
+//for each provides element, index and array to the callback function within.
+
+let numbers = [1,2,3,4,5];
+numbers.forEach(cube);
+numbers.forEach(display);
+
+function double(element, index, array){
+    array[index] = 2 * element;
 }
 
-const length = 100;
-const hasUpper = false;
-const hasLower = false;
-const hasSymbols = false;
-const hasNumbers = true; 
+function square(element, index, array){
+    array[index] = Math.pow(element, 2);
+}
 
-const password = generatePassword(length, hasUpper, hasLower, hasSymbols, hasNumbers);
+function cube(element, index, array){
+    array[index] = Math.pow(element, 3);
+}
 
-console.log(password);
+function display(element){
+    console.log(element);
+}
