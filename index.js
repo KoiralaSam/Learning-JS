@@ -308,25 +308,69 @@ console.log(students);*/
 //     console.log(element);
 // }
 
-let fruits = ["apple", "orange", "banana", "kiwi"]
+// let fruits = ["apple", "orange", "banana", "kiwi"]
 
-fruits.forEach(uppercase);
-fruits.forEach(lowerCase);
-fruits.forEach(capitalize);
-fruits.forEach(display);
+// fruits.forEach(uppercase);
+// fruits.forEach(lowerCase);
+// fruits.forEach(capitalize);
+// fruits.forEach(display);
 
 
-function uppercase(element, index, array){
-    array[index] = element.toUpperCase();
-}
+// function uppercase(element, index, array){
+//     array[index] = element.toUpperCase();
+// }
 
-function lowerCase(element, index, array){
-    array[index] = element.toLowerCase();
-}
+// function lowerCase(element, index, array){
+//     array[index] = element.toLowerCase();
+// }
 
-function capitalize(element, index, array){
-    array[index] = element.charAt(0).toUpperCase() + element.substring(1);
-}
-function display(element){
-    console.log(element);
+// function capitalize(element, index, array){
+//     array[index] = element.charAt(0).toUpperCase() + element.substring(1);
+// }
+// function display(element){
+//     console.log(element);
+// }
+// MAPS also provides element, index and array but returns a new array unlike for Each
+
+// const numbers = [1,2,3,4,5]
+
+// const squares = numbers.map(square);
+// const cubes = numbers.map(cube);
+
+// function cube(element){
+//     return Math.pow(element, 3);
+// }
+// function square(element){
+//     return Math.pow(element, 2);
+// }
+// console.log(squares);
+// console.log(cubes);
+
+// const dates = ["2024-1-10", "2025-2-20", "2025-4-31"];
+// const formattedDates = dates.map(formatdates);
+// console.log(formattedDates);
+// function formatdates(element){
+//     const parts = element.split("-");
+//     return `${parts[1]}/${parts[2]}/${parts[0]}`;
+// }
+
+// //Filter creates a new array by filtering the elements based on the condition
+// let numbers = [1,2,3,4,5,6,7,8];
+// let evenNums = numbers.filter(iseven);
+// let oddNums = numbers.filter(isOdd);
+// console.log(evenNums);
+// console.log(oddNums);
+// function iseven(element){
+//     return element % 2 === 0;
+//     }
+// function isOdd(element){
+//     return element % 2 !== 0;
+// }
+
+//.reduce() = reduce the elements of an array to a single value
+const prices = [5, 30, 15, 25,0, 6];
+const total = prices.reduce(sum);
+console.log(`$${total.toFixed(2)}`);
+function sum(prevTotal, next){
+    return prevTotal + next;
 }
