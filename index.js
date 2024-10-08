@@ -368,9 +368,42 @@ console.log(students);*/
 // }
 
 //.reduce() = reduce the elements of an array to a single value
-const prices = [5, 30, 15, 25,0, 6];
-const total = prices.reduce(sum);
-console.log(`$${total.toFixed(2)}`);
-function sum(prevTotal, next){
-    return prevTotal + next;
-}
+// const prices = [5, 30, 15, 25,0, 6];
+// const total = prices.reduce(sum);
+// console.log(`$${total.toFixed(2)}`);
+// function sum(prevTotal, next){
+//     return prevTotal + next;
+// }
+
+//function declaration
+const nums = [1,3,5,7,9,32];
+const squares = nums.map(function(element){
+    return Math.pow(element,2);
+});
+const evenNums = nums.filter(function(element){
+    return element%2==0;
+})
+const oddNums = nums.filter(function(element){
+    return element % 2 !== 0;
+})
+console.log(squares);
+console.log(evenNums);
+console.log(oddNums);
+
+//Arraow functions - good functions that ypu only use once
+//regular function
+// function hello(){
+//     console.log("Hello");
+// }
+// hello();
+
+//function expression
+// const hello = function(){
+//     console.log("Hello")
+// }
+// hello();
+
+//arraow function
+const hello = (name, age) => {console.log(`Hello ${name}`)
+                        console.log(`You are ${age} years old!`)};
+hello("Samarpan",21);
