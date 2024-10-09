@@ -376,22 +376,22 @@ console.log(students);*/
 // }
 
 //function declaration
-const nums = [1,3,5,7,9,32];
-const squares = nums.map(function(element){
-    return Math.pow(element,2);
-});
-const evenNums = nums.filter(function(element){
-    return element%2==0;
-})
-const oddNums = nums.filter(function(element){
-    return element % 2 !== 0;
-})
-console.log(squares);
-console.log(evenNums);
-console.log(oddNums);
+// const nums = [1,3,5,7,9,32];
+// const squares = nums.map(function(element){
+//     return Math.pow(element,2);
+// });
+// const evenNums = nums.filter(function(element){
+//     return element%2==0;
+// })
+// const oddNums = nums.filter(function(element){
+//     return element % 2 !== 0;
+// })
+// console.log(squares);
+// console.log(evenNums);
+// console.log(oddNums);
 
 //Arraow functions - good functions that ypu only use once
-//regular function
+// regular function
 // function hello(){
 //     console.log("Hello");
 // }
@@ -403,7 +403,25 @@ console.log(oddNums);
 // }
 // hello();
 
-//arraow function
-const hello = (name, age) => {console.log(`Hello ${name}`)
-                        console.log(`You are ${age} years old!`)};
-hello("Samarpan",21);
+// //arrow function
+// const hello = (name, age) => {console.log(`Hello ${name}`)
+//                         console.log(`You are ${age} years old!`)};
+// hello("Samarpan",21);
+
+//Timeout function (based on observation it runs after all other methods in a block of code even if the time is less!)
+// function hello(){
+//     console.log("Hello");
+// }
+setTimeout(() => console.log("Hello"), 30000);
+
+const nums = [1,2,3,4,5,6];
+const squares = nums.map((element)=> Math.pow(element,2));
+console.log(squares);
+const cubes = nums.map((element)=>Math.pow(element,3));
+console.log(cubes);
+const evenNums = nums.filter((element)=>element%2==0);
+console.log(evenNums);
+const oddNums = nums.filter((element)=>element%2!=0);
+console.log(oddNums);
+const total = nums.reduce((accumulator, element)=>accumulator+element);
+console.log(total);
