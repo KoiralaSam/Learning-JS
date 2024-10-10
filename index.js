@@ -211,24 +211,24 @@ console.log(students);*/
 //     }
 // }
 
-// const food1 = "Hamburger";
-//  const food2 = "Pizza";
-//  const food3 = "Sushi";
-//  const food4 = "hotdog";
-//  const food5 = "ramen";
+ const food1 = "Hamburger";
+  const food2 = "Pizza";
+  const food3 = "Sushi";
+  const food4 = "hotdog";
+  const food5 = "ramen";
 
 
-// function getFoods(...foods){
-//    return foods;
-// }
+function getFoods(...foods){
+   return foods;
+ }
 
-//  function openFridge(...foods){
-//     console.log(...foods);
-//  }
+  function openFridge(...foods){
+     console.log(...foods);
+  }
 
-//  const foods = getFoods(food1, food2, food3, food4, food5);
+  const foods = getFoods(food1, food2, food3, food4, food5);
 
-//  openFridge(food1, food2, food3, food4, food5);
+  openFridge(food1, food2, food3, food4, food5);
 // function rollDice(){
 
 //     const numOfDice = document.getElementById("numOfDice").value;
@@ -412,16 +412,61 @@ console.log(students);*/
 // function hello(){
 //     console.log("Hello");
 // }
-setTimeout(() => console.log("Hello"), 30000);
+// setTimeout(() => console.log("Hello"), 30000``);
 
-const nums = [1,2,3,4,5,6];
-const squares = nums.map((element)=> Math.pow(element,2));
-console.log(squares);
-const cubes = nums.map((element)=>Math.pow(element,3));
-console.log(cubes);
-const evenNums = nums.filter((element)=>element%2==0);
-console.log(evenNums);
-const oddNums = nums.filter((element)=>element%2!=0);
-console.log(oddNums);
-const total = nums.reduce((accumulator, element)=>accumulator+element);
-console.log(total);
+// const nums = [1,2,3,4,5,6];
+// const squares = nums.map((element)=> Math.pow(element,2));
+// console.log(squares);
+// const cubes = nums.map((element)=>Math.pow(element,3));
+// console.log(cubes);
+// const evenNums = nums.filter((element)=>element%2==0);
+// console.log(evenNums);
+// const oddNums = nums.filter((element)=>element%2!=0);
+// console.log(oddNums);
+// const total = nums.reduce((accumulator, element)=>accumulator+element);
+// console.log(total);
+
+// JavaScript Objects
+//  const person = {
+//     firstName: "SpongeBob",
+//     lastName:  "SquarePants",
+//     age: 30,
+//     isEmployed: true,
+//     sayHello: ()=>console.log("Hi, I am SpongeBob"),
+//     eat: ()=> console.log("I am eating a crabby Patty"),
+//  }
+
+//  const person2 = {
+//     firstName: "Patrick",
+//     lastName:  "Star",
+//     age: 42,
+//     isEmployed: false,
+//     sayHello: () => console.log("Hi, I am Patrick"),
+//     eat: ()=> console.log("I am eating a Plankton"),
+//  }
+//  console.log(person.firstName);
+//  console.log(person.lastName);
+//  console.log(person.age);
+//  console.log(person.isEmployed);
+//  person.sayHello();
+//  person.eat();
+
+//  console.log(person2.firstName);
+//  console.log(person2.lastName);
+//  console.log(person2.age);
+//  console.log(person2.isEmployed);
+//  person2.sayHello();
+//  person2.eat();
+
+//  //this- reference to the object where THIs is used
+//  const person1 = {
+//     name: "SpongeBob",
+//     favFood: "CrabbyPatties",
+//     sayHello: function(){
+//         console.log(`I am ${this.name}`)
+//     },
+//     eat: () => console.log(`${this.name} is eating ${this.favFood}`)
+//  }
+
+//  person1.sayHello();
+//  person1.eat();
