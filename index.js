@@ -473,66 +473,105 @@ console.log(students);*/
 //  person1.sayHello();
 //  person1.eat(); 
 
-function Car(make, model, year, color){
-  this.make = make;
-  this.model = model;
-  this.year = year;
-  this.color = color;
-  this.drive = function(){
-    console.log(`You drive the ${this.model}`);
+// function Car(make, model, year, color){
+//   this.make = make;
+//   this.model = model;
+//   this.year = year;
+//   this.color = color;
+//   this.drive = function(){
+//     console.log(`You drive the ${this.model}`);
+//   }
+// }
+// const car1 = new Car("Ford", "Mustang", 2024, "red");
+// const car2 = new Car("Suzuki", "Celerio", 2017, "Silver");
+// const car3 = new Car("Dodge", "Challenger", 2023, "SpaceGrey");
+
+// console.log(car1.make);
+// console.log(car1.model);
+// console.log(car1.year);
+// console.log(car1.color);
+// car1.drive();
+
+// console.log(car2.make);
+// console.log(car2.model);
+// console.log(car2.year);
+// console.log(car2.color);
+// car2.drive();
+
+// console.log(car3.make);
+// console.log(car3.model);
+// console.log(car3.year);
+// console.log(car3.color);
+// car3.drive();
+
+// //classes in JavaScript are (Es6 feature) 
+// //instead of using constructor singly we use constructors in the classes
+// class product{
+//   constructor(name, price){
+//     this.name = name;
+//     this.price = price;
+//   }
+
+//   displayProduct(){
+//     console.log(`Product: ${this.name}`);
+//     console.log(`Price: $${this.price.toFixed(2)}`);
+//   }
+
+//   calculateTotal(salesTax){
+//     return this.price + (this.price * (salesTax));
+//   }
+// }
+// const product1 = new product("Shirt", 19.99);
+// const product2 = new product("Pants", 22.50);
+// const product3 = new product("UnderWear", 100.99);
+
+// product1.displayProduct(); 
+// const total1 = product1.calculateTotal(0.1099);
+// console.log(`Total price(with tax) is ${total1.toF`ixed(2)}`);
+
+// product3.displayProduct(); 
+// const total3 = product3.calculateTotal(0.1099);
+// console.log(`Total price(with tax) is ${total3.toFixed(2)}`);
+
+// product2.displayProduct(); 
+// const total2 = product2.calculateTotal(0.1099);
+// console.log(`Total price(with tax) is ${total2.toFixed(2)}`);
+
+// Static keyWord - defines properties or methods that belong to the class
+// itself rather than the object meaning it can be acessed by every instance/obj of the class
+
+class MathUtil{
+  static PI = 3.14159;
+
+  static getDiameter(radius){
+    return radius * 2;
+  }
+  static getCircumference(radius){
+    return 2 * this.PI * radius;
+  }
+  static getArea(radius){
+    return this.PI * Math.pow(radius, 2)
   }
 }
-const car1 = new Car("Ford", "Mustang", 2024, "red");
-const car2 = new Car("Suzuki", "Celerio", 2017, "Silver");
-const car3 = new Car("Dodge", "Challenger", 2023, "SpaceGrey");
+console.log(MathUtil.PI);
+console.log(MathUtil.getDiameter(10));
 
-console.log(car1.make);
-console.log(car1.model);
-console.log(car1.year);
-console.log(car1.color);
-car1.drive();
+class User{
+  static userCount = 0;
 
-console.log(car2.make);
-console.log(car2.model);
-console.log(car2.year);
-console.log(car2.color);
-car2.drive();
-
-console.log(car3.make);
-console.log(car3.model);
-console.log(car3.year);
-console.log(car3.color);
-car3.drive();
-
-//classes in JavaScript are (Es6 feature) 
-//instead of using constructor singly we use constructors in the classes
-class product{
-  constructor(name, price){
-    this.name = name;
-    this.price = price;
+  constructor(userName){
+    this.userName = userName;
+    User.userCount++;
   }
-
-  displayProduct(){
-    console.log(`Product: ${this.name}`);
-    console.log(`Price: $${this.price.toFixed(2)}`);
+  static getUserCount(){
+    console.log(`There are ${User.userCount} users online`);
   }
-
-  calculateTotal(salesTax){
-    return this.price + (this.price * (salesTax));
+  sayHello(){
+    console.log("Hello, My name is " + this.userName);
   }
 }
-const product1 = new product("Shirt", 19.99);
-const product2 = new product("Pants", 22.50);
-const product3 = new product("UnderWear", 100.99);
-
-product1.displayProduct(); 
-const total1 = product1.calculateTotal(0.1099);
-console.log(`Total price(with tax) is ${total1.toFixed(2)}`);
-
-product3.displayProduct(); 
-const total3 = product3.calculateTotal(0.1099);
-console.log(`Total price(with tax) is ${total3.toFixed(2)}`);
-
-product2.displayProduct(); 
-const total2 = product2.calculateTotal(0.1099);
-console.log(`Total price(with tax) is ${total2.toFixed(2)}`);
+const user1 = new User("SpongeBob");
+const user2 = new User("Patrick");
+console.log(User.userCount);
+user1.sayHello();
+User.getUserCount();
