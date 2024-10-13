@@ -211,24 +211,24 @@ console.log(students);*/
 //     }
 // }
 
- const food1 = "Hamburger";
-  const food2 = "Pizza";
-  const food3 = "Sushi";
-  const food4 = "hotdog";
-  const food5 = "ramen";
+//  const food1 = "Hamburger";
+//   const food2 = "Pizza";
+//   const food3 = "Sushi";
+//   const food4 = "hotdog";
+//   const food5 = "ramen";
 
 
-function getFoods(...foods){
-   return foods;
- }
+// function getFoods(...foods){
+//    return foods;
+//  }
 
-  function openFridge(...foods){
-     console.log(...foods);
-  }
+//   function openFridge(...foods){
+//      console.log(...foods);
+//   }
 
-  const foods = getFoods(food1, food2, food3, food4, food5);
+//   const foods = getFoods(food1, food2, food3, food4, food5);
 
-  openFridge(food1, food2, food3, food4, food5);
+//   openFridge(food1, food2, food3, food4, food5);
 // function rollDice(){
 
 //     const numOfDice = document.getElementById("numOfDice").value;
@@ -446,7 +446,7 @@ function getFoods(...foods){
 //  }
 //  console.log(person.firstName);
 //  console.log(person.lastName);
-//  console.log(person.age);
+//  console.log(person.age);``
 //  console.log(person.isEmployed);
 //  person.sayHello();
 //  person.eat();
@@ -459,6 +459,8 @@ function getFoods(...foods){
 //  person2.eat();
 
 //  //this- reference to the object where THIs is used
+// cannot use this keyword with arrow function because it will point to the window object
+
 //  const person1 = {
 //     name: "SpongeBob",
 //     favFood: "CrabbyPatties",
@@ -469,4 +471,68 @@ function getFoods(...foods){
 //  }
 
 //  person1.sayHello();
-//  person1.eat();
+//  person1.eat(); 
+
+function Car(make, model, year, color){
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.color = color;
+  this.drive = function(){
+    console.log(`You drive the ${this.model}`);
+  }
+}
+const car1 = new Car("Ford", "Mustang", 2024, "red");
+const car2 = new Car("Suzuki", "Celerio", 2017, "Silver");
+const car3 = new Car("Dodge", "Challenger", 2023, "SpaceGrey");
+
+console.log(car1.make);
+console.log(car1.model);
+console.log(car1.year);
+console.log(car1.color);
+car1.drive();
+
+console.log(car2.make);
+console.log(car2.model);
+console.log(car2.year);
+console.log(car2.color);
+car2.drive();
+
+console.log(car3.make);
+console.log(car3.model);
+console.log(car3.year);
+console.log(car3.color);
+car3.drive();
+
+//classes in JavaScript are (Es6 feature) 
+//instead of using constructor singly we use constructors in the classes
+class product{
+  constructor(name, price){
+    this.name = name;
+    this.price = price;
+  }
+
+  displayProduct(){
+    console.log(`Product: ${this.name}`);
+    console.log(`Price: $${this.price.toFixed(2)}`);
+  }
+
+  calculateTotal(salesTax){
+    return this.price + (this.price * (salesTax));
+  }
+}
+const product1 = new product("Shirt", 19.99);
+const product2 = new product("Pants", 22.50);
+const product3 = new product("UnderWear", 100.99);
+
+product1.displayProduct(); 
+const total1 = product1.calculateTotal(0.1099);
+console.log(`Total price(with tax) is ${total1.toFixed(2)}`);
+
+product3.displayProduct(); 
+const total3 = product3.calculateTotal(0.1099);
+console.log(`Total price(with tax) is ${total3.toFixed(2)}`);
+
+product2.displayProduct(); 
+const total2 = product2.calculateTotal(0.1099);
+console.log(`Total price(with tax) is ${total2.toFixed(2)}`);
