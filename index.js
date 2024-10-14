@@ -632,61 +632,219 @@ console.log(students);*/
 // hawk.fly();
 
 //Super keyword- is used in classes to call the constructor or acess the properties and methods of a parent class
-class Animal{
-  constructor(name, age){
-    this.name = name;
-    this.age = age;
-  }
-  eat(){
-    console.log(`The ${this.name} is eating.`);
-  }
-  sleep(){
-    console.log(`The ${this.name} is sleeping.`);
-  }
-}
+// class Animal{
+//   constructor(name, age){
+//     this.name = name;
+//     this.age = age; 
+//   }
+//   eat(){
+//     console.log(`The ${this.name} is eating.`);
+//   }
+//   sleep(){
+//     console.log(`The ${this.name} is sleeping.`);
+//   }
+//   move(){
+//     console.log(`This ${this.name} can move.`)
+//   }
+// }
 
-class Rabbit extends Animal{
-  constructor(name, age, runSpeed){
-    super(name, age);
-    this.runSpeed = runSpeed;
-  }
-  run(){
-    console.log(`The ${this.name} is running at ${this.runSpeed} miles/hr`);
-  }
-}
-class Fish extends Animal{
-  constructor(name, age, swimSpeed){
-    super(name, age);
-    this.swimSpeed = swimSpeed;
-  }
-  swim(){
-    console.log(`The ${this.name} is swimming at ${this.swimSpeed} miles/hr`);
-  }
-} 
-class Hawk extends Animal{
-  constructor(name, age, flySpeed){
-    super(name, age);
-    this.flySpeed = flySpeed;
-  }
-  fly(){
-    console.log(`The ${this.name} is flying at ${this.flySpeed} miles/hr`);
-  }
-}
+// class Rabbit extends Animal{
+//   constructor(name, age, runSpeed){
+//     super(name, age);
+//     this.runSpeed = runSpeed;
+//   }
+//   run(){
+//     super.move(this.runSpeed);
+//     console.log(`The ${this.name} is running at ${this.runSpeed} miles/hr`);
+//     console.log("");
+//   }
+// }
+// class Fish extends Animal{
+//   constructor(name, age, swimSpeed){
+//     super(name, age);
+//     this.swimSpeed = swimSpeed;
+//   }
+//   swim(){
+//     super.move(this.swimSpeed);
+//     console.log(`The ${this.name} is swimming at ${this.swimSpeed} miles/hr`);
+//     console.log("");
+//   }
+// } 
+// class Hawk extends Animal{
+//   constructor(name, age, flySpeed){
+//     super(name, age);
+//     this.flySpeed = flySpeed;
+//   }
+//   fly(){
+//     super.move(this.flySpeed);
+//     console.log(`The ${this.name} is flying at ${this.flySpeed} miles/hr`);
+//     console.log("");
+//   }
+// }
 
-const rabbit  = new Rabbit("Rabbit", 2, 25);
-rabbit.eat();
-rabbit.sleep();
-rabbit.run();
+// const rabbit  = new Rabbit("Rabbit", 2, 25);
+// rabbit.eat();
+// rabbit.sleep();
+// rabbit.run();
 
-const fish  = new Fish("GoldFish", 1, 50);
-fish.eat();
-fish.sleep();
-fish.swim();
+// const fish  = new Fish("GoldFish", 1, 50);
+// fish.eat();
+// fish.sleep();
+// fish.swim();
 
-const hawk  = new Hawk("BaldEagle", 5, 75);
-hawk.eat();
-hawk.sleep();
-hawk.fly();
+// const hawk  = new Hawk("BaldEagle", 5, 75);
+// hawk.eat();
+// hawk.sleep();
+// hawk.fly()
+
 
 //codespace test codeSpace test
 console.log(`this codespace is working`);
+
+//getters and setters in JS
+// getters method that makes a property readable
+// setters method that makes a property readable
+
+class Rectangle{
+
+  constructor(width, height){
+    this.width = width;
+    this.height = height;
+  }
+
+  set width(newWidth){
+    if (newWidth>0){
+      this._width = newWidth;
+    }
+    else{
+      console.error("Width must be greater than 0");
+    }
+  }
+
+  set height(newHeight){
+    if (newHeight>0){
+      this._height = newHeight;
+    }
+    else{
+      console.error("Height must be greater than 0");
+    }
+  }
+
+  get width(){
+    return this._width;
+  }
+  get height(){
+    return this._height;
+  }
+  get area(){
+    return this._height * this._width;
+  }
+}
+
+const rectangle = new Rectangle(10, "4");
+
+console.log(rectangle.width);
+console.log(rectangle.height);
+console.log(rectangle.area);
+
+class person{
+
+  constructor(firstName, lastName, age){
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  set firstName(name){
+    if((typeof(name) === "string")&&(name.length>0)){
+      this._firstName = name;
+    }
+    else{
+      console.error("Name doesn't meet the requirements");
+    }
+  }
+
+  set lastName(newLastName){
+    if((typeof(newLastName) === "string")&&(newLastName.length>0)){
+      this._lastName = newLastName;
+    }
+    else{
+      console.error("Last Name doesn't meet the requirements");
+    }
+  }
+
+  set age(newAge){
+    (newAge>0)&&(newAge<200) ? this._age = newAge : console.error("Age doesn't meet the requirements.");
+  }
+
+  get firstName(){
+    return this._firstName;
+  }
+
+  get lastName(){
+    return this._lastName;
+  }
+
+  get age(){
+    return this._age;
+  }
+
+  get fullName(){
+    return this._firstName + " " + this._lastName;
+  }
+}
+
+const person1 = new person("Pizza", "Maker", 56
+
+);
+console.log(person1.firstName);
+console.log(person1._lastName);
+console.log(person1.fullName);
+console.log(person1._age);
+
+//Destructuring = allows to extract values from arrays and objs
+//               and assign to variables in a convinient way
+//               [] = perform array destructuring
+//               {} = perform object destructuring
+
+//eg1- swap values of 2 variables using array desstructuring
+let a = 1;
+let b = 2;
+[a,b] = [b,a]
+console.log(a);
+console.log(b);
+
+const colors = ["red","green","blue","black","white"];
+[colors[0], colors[4]] = [colors[4],colors[0]];
+console.log(colors);
+
+const [firstColor, secondColor, thirdColor, ...extra] = colors;
+console.log(firstColor);
+console.log(secondColor);
+console.log(thirdColor);
+console.log(extra);
+
+function displayPerson(firstName, lastName, age, job){
+  console.log(`name: ${firstName} ${lastName}`);
+  console.log(`age: ${age}`);
+  console.log(`job: ${job ==undefined? "Unemployed": job}`);
+}
+
+
+const man = {
+  firstName: "spongeBob",
+  lastName: "SquarePants",
+  age: 30,
+  job: "fryCook",
+}
+
+const man2 = {
+  firstName: "Patrick",
+  lastName: "Star",
+  age: 25,
+}
+
+//const {firstName, lastName, age, job} = man2;
+
+const {firstName, lastName, age, job} = man;
+displayPerson(firstName, lastName, age, job);
