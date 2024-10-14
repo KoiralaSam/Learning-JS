@@ -540,38 +540,150 @@ console.log(students);*/
 // Static keyWord - defines properties or methods that belong to the class
 // itself rather than the object meaning it can be acessed by every instance/obj of the class
 
-class MathUtil{
-  static PI = 3.14159;
+// class MathUtil{
+//   static PI = 3.14159;
 
-  static getDiameter(radius){
-    return radius * 2;
+//   static getDiameter(radius){
+//     return radius * 2;
+//   }
+//   static getCircumference(radius){
+//     return 2 * this.PI * radius;
+//   }
+//   static getArea(radius){
+//     return this.PI * Math.pow(radius, 2)
+//   }
+// }
+// console.log(MathUtil.PI);
+// console.log(MathUtil.getDiameter(10));
+
+// class User{
+//   static userCount = 0;
+
+//   constructor(userName){
+//     this.userName = userName;
+//     User.userCount++;
+//   }
+//   static getUserCount(){
+//     console.log(`There are ${User.userCount} users online`);
+//   }
+//   sayHello(){
+//     console.log("Hello, My name is " + this.userName);
+//   }
+// }
+// const user1 = new User("SpongeBob");
+// const user2 = new User("Patrick");
+
+// console.log(User.userCount);
+// user1.sayHello();
+// User.getUserCount();
+
+//INheritence =  allows a new class to Inherit properties and methods from a existing class
+//               helps with code reUsability
+
+// class Animal{
+//   alive  = true;
+//   eat(){
+//     console.log(`This ${this.name} is eating`)
+//   }
+//   sleep(){
+//     console.log(`This ${this.name} is eating`);
+//   }
+// }
+
+// class Rabbit extends Animal{
+//   name = "Rabbit";
+
+//   run(){
+//     console.log(`This ${this.name} is running`);
+//   }
+// }
+// class Fish extends Animal{
+//   name = "Fish";
+//   swim(){
+//     console.log(`This ${this.name} is swimming`);
+//   }
+// }
+// class Hawk extends Animal{
+//   name = "Hawk";
+//   fly(){
+//     console.log(`This ${this.name} is flying`);
+//   }
+// }
+// const rabbit = new Rabbit();
+// const fish = new Fish();
+// const hawk = new Hawk();
+
+// rabbit.alive = false;
+// console.log(rabbit.alive);
+// rabbit.eat();
+// rabbit.sleep();
+// rabbit.run();
+
+// fish.alive = false;
+// console.log(fish.alive);
+// fish.eat();
+// fish.sleep();
+// fish.swim();
+
+// hawk.alive = false;
+// console.log(hawk.alive);
+// hawk.eat();
+// hawk.sleep();
+// hawk.fly();
+
+//Super keyword- is used in classes to call the constructor or acess the properties and methods of a parent class
+class Animal{
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
   }
-  static getCircumference(radius){
-    return 2 * this.PI * radius;
+  eat(){
+    console.log(`The ${this.name} is eating.`);
   }
-  static getArea(radius){
-    return this.PI * Math.pow(radius, 2)
+  sleep(){
+    console.log(`The ${this.name} is sleeping.`);
   }
 }
-console.log(MathUtil.PI);
-console.log(MathUtil.getDiameter(10));
 
-class User{
-  static userCount = 0;
-
-  constructor(userName){
-    this.userName = userName;
-    User.userCount++;
+class Rabbit extends Animal{
+  constructor(name, age, runSpeed){
+    super(name, age);
+    this.runSpeed = runSpeed;
   }
-  static getUserCount(){
-    console.log(`There are ${User.userCount} users online`);
-  }
-  sayHello(){
-    console.log("Hello, My name is " + this.userName);
+  run(){
+    console.log(`The ${this.name} is running at ${this.runSpeed} miles/hr`);
   }
 }
-const user1 = new User("SpongeBob");
-const user2 = new User("Patrick");
-console.log(User.userCount);
-user1.sayHello();
-User.getUserCount();
+class Fish extends Animal{
+  constructor(name, age, swimSpeed){
+    super(name, age);
+    this.swimSpeed = swimSpeed;
+  }
+  swim(){
+    console.log(`The ${this.name} is swimming at ${this.swimSpeed} miles/hr`);
+  }
+} 
+class Hawk extends Animal{
+  constructor(name, age, flySpeed){
+    super(name, age);
+    this.flySpeed = flySpeed;
+  }
+  fly(){
+    console.log(`The ${this.name} is flying at ${this.flySpeed} miles/hr`);
+  }
+}
+
+const rabbit  = new Rabbit("Rabbit", 2, 25);
+rabbit.eat();
+rabbit.sleep();
+rabbit.run();
+
+const fish  = new Fish("GoldFish", 1, 50);
+fish.eat();
+fish.sleep();
+fish.swim();
+
+const hawk  = new Hawk("BaldEagle", 5, 75);
+hawk.eat();
+hawk.sleep();
+hawk.fly();
