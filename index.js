@@ -850,38 +850,89 @@ console.log(students);*/
 // displayPerson(firstName, lastName, age, job);
 
 //nested objects--{}
-const person = {
-  fullName: "SpongeBob SquarePants",
-  age: 30,
-  isStudent: true,
-  hobbies: ["karate", "jellyFishing", "cooking"],
-  address: {
-    street: "1234 Conch St.",
-    city: "Bikini Bottom",
-    country: "International Waters"
-  }
-}
-for (const property in person.address){
-  console.log(person.address[property]);
-}
+// const person = {
+//   fullName: "SpongeBob SquarePants",
+//   age: 30,
+//   isStudent: true,
+//   hobbies: ["karate", "jellyFishing", "cooking"],
+//   address: {
+//     street: "1234 Conch St.",
+//     city: "Bikini Bottom",
+//     country: "International Waters"
+//   }
+// }
+// for (const property in person.address){
+//   console.log(person.address[property]);
+// }
 
-class Person{
-  constructor(name, age, ...address){
-    this.name = name;
-    this.age = age;
-    this.address = new Address(...address)
-  }
+// class Person{
+//   constructor(name, age, ...address){
+//     this.name = name;
+//     this.age = age;
+//     this.address = new Address(...address)
+//   }
+// }
+// class Address{
+//   constructor(Street, City, Country){
+//     this.Street = Street;
+//     this.Country = Country;
+//     this.City = City;
+//   }
+// }
+// const person1 = new Person("SpongeBob SquarePants", 30, "1234 Conch St.", "Bikini Bottoms", "International Waters");
+// const person2 = new Person("Patrick Star", 25, "1256 Conch St.", "Bikini Bottoms", "International Waters");
+// const person3 = new Person("SquidWards Edwards", 45, "1278 Conch St.", "Bikini Bottoms", "International Waters");
+// for(const property in person1.address){
+//   console.log(person3.address[property]);
+// }
+
+//ARRAY OF OBJECTS
+
+// class fruits{
+//   constructor(name, color, calories){
+//     this.name = name;
+//     this.color = color;
+//     this.calories = calories;
+//   }
+// }
+// const fruit1 = new fruits("apple","red",50);
+// const fruit2 = new fruits("banana","yellow",78); 
+// const fruit3 = new fruits("orange","orange",45);
+// const fruit4 = new fruits("pineapple","yellow",87); 
+// const fruit5 = new fruits("guava","green",63);
+
+// const fruit = [fruit1, fruit2,fruit3, fruit4, fruit5 ];
+// //fruit.forEach((element)=> console.log(element.name));
+// fruitName = [];
+// fruit.map((element) => fruitName.push(element.name));
+// console.log(fruitName);
+// const yellowFruits = fruit.filter((element)=> element.color === "yellow");
+// yellowFruits.forEach((element)=> console.log(element.name));
+// const lowCalFruits = fruit.filter((element)=> element.calories<=50);
+// console.log(" ");
+// lowCalFruits.forEach((element)=> console.log(element.name));
+
+// //reduce method
+// const maxFruit = fruit.reduce((accumulator, element)=> element.calories > accumulator.calories ? element: accumulator);
+// console.log(maxFruit);
+
+// const minFruit = fruit.reduce((accumulator, element)=> element.calories < accumulator.calories ? element: accumulator);
+// console.log(minFruit);
+
+//sort() method = method used to sort elements of an array in a place 
+    //            sorts elements as strings in a lexicographic order not alphabetical 
+    //            lexicographic = (alphabet + numbers + symbols) as strings
+
+let numbers = [];
+for(let i = 0; i<=10;i++){
+  numbers.push(i);
 }
-class Address{
-  constructor(Street, City, Country){
-    this.Street = Street;
-    this.Country = Country;
-    this.City = City;
-  }
-}
-const person1 = new Person("SpongeBob SquarePants", 30, "1234 Conch St.", "Bikini Bottoms", "International Waters");
-const person2 = new Person("Patrick Star", 25, "1256 Conch St.", "Bikini Bottoms", "International Waters");
-const person3 = new Person("SquidWards Edwards", 45, "1278 Conch St.", "Bikini Bottoms", "International Waters");
-for(const property in person1.address){
-  console.log(person3.address[property]);
-}
+//console.log(numbers.sort((a,b)=> a - b));
+
+const people = [{name: "Spongebod", age: 30, gpa: 3.0},
+                {name: "Patrick", age: 37, gpa: 2.75},
+                {name: "Squidward", age: 40, gpa: 3.2},
+                {name: "Sandy", age: 25, gpa: 4.0}]
+
+people.sort((a,b)=> b.name.localeCompare(a.name));
+console.log(people);
