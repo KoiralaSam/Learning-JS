@@ -919,20 +919,107 @@ console.log(students);*/
 // const minFruit = fruit.reduce((accumulator, element)=> element.calories < accumulator.calories ? element: accumulator);
 // console.log(minFruit);
 
+
+
 //sort() method = method used to sort elements of an array in a place 
     //            sorts elements as strings in a lexicographic order not alphabetical 
     //            lexicographic = (alphabet + numbers + symbols) as strings
 
-let numbers = [];
-for(let i = 0; i<=10;i++){
-  numbers.push(i);
+// let numbers = [];
+// for(let i = 0; i<=10;i++){
+//   numbers.push(i);
+// }
+// //console.log(numbers.sort((a,b)=> a - b));
+
+// const people = [{name: "Spongebod", age: 30, gpa: 3.0},
+//                 {name: "Patrick", age: 37, gpa: 2.75},
+//                 {name: "Squidward", age: 40, gpa: 3.2},
+//                 {name: "Sandy", age: 25, gpa: 4.0}]
+
+// people.sort((a,b)=> b.name.localeCompare(a.name));
+// console.log(people);
+
+//Fisher-Yates algorithm
+
+const cards = ["A",1,2,3,4,5,6,7,8,9,10,"J","Q","K"];
+shuffle(cards);
+//console.log(cards);
+
+function shuffle(array){
+  for(let i = array.length-1; i>0; i--){
+    const random = Math.floor(Math.random() * (i+1)); 
+    [array[i],array[random]] = [array[random],array[i]];
+  }
 }
-//console.log(numbers.sort((a,b)=> a - b));
 
-const people = [{name: "Spongebod", age: 30, gpa: 3.0},
-                {name: "Patrick", age: 37, gpa: 2.75},
-                {name: "Squidward", age: 40, gpa: 3.2},
-                {name: "Sandy", age: 25, gpa: 4.0}]
+//Date Objects
+//const date = new Date(2024, 10, 4, 7, 49, 4);
+const date = new Date();
+const year =  date.getFullYear();
+const month = date.getMonth();
+const day = date.getDate();
+const hour = date.getHours();
+const minutes = date.getMinutes();
+const sec  = date.getSeconds();
+const dayOfWeek = date.getDay();
 
-people.sort((a,b)=> b.name.localeCompare(a.name));
-console.log(people);
+console.log(year + " "+ month + " " +day + " " +hour + " " +minutes + " " + sec + " "+ dayOfWeek);
+
+// closure = A function defined inside of a function. The inner function has access to the variables
+// and scope of the outer function.
+// Allow for private variables and state maintainence.
+//Used frequently in JS frameworks
+//Maintains the state of the variable and makes it private
+
+function outer(){
+  let message = "This is my message to you";
+  function print(){
+    console.log(message);
+  }
+  print();
+}
+outer();
+
+function counter(){
+  let count = 0;
+  function increment(){
+    count++;
+    console.log(`Count increased to ${count}`)
+  }
+
+  function getCount(){
+    return count;
+  }
+  return {increment, getCount};
+}
+
+const myCount = counter();
+myCount.increment();
+myCount.increment();
+myCount.increment();
+
+console.log(myCount.getCount());
+function keepScore(){
+  let score = 0;
+
+  function increaseScore(points){
+    score += points;
+    console.log(`+${points} points.`);
+  }
+
+  function decareaseScore(points){
+    score -= points;
+    console.log(`-${points} points.`);
+  }
+
+  function getScore(){
+    return score;
+  }
+  return {increaseScore, decareaseScore, getScore};
+}
+
+const theScore = new keepScore();
+theScore.increaseScore(5);
+theScore.decareaseScore(6);
+theScore.increaseScore(5);
+console.log(`The final score is ${theScore.getScore()}`);
