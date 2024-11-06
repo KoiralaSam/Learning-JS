@@ -941,29 +941,29 @@ console.log(students);*/
 
 //Fisher-Yates algorithm
 
-const cards = ["A",1,2,3,4,5,6,7,8,9,10,"J","Q","K"];
-shuffle(cards);
-//console.log(cards);
+// const cards = ["A",1,2,3,4,5,6,7,8,9,10,"J","Q","K"];
+// shuffle(cards);
+// //console.log(cards);
 
-function shuffle(array){
-  for(let i = array.length-1; i>0; i--){
-    const random = Math.floor(Math.random() * (i+1)); 
-    [array[i],array[random]] = [array[random],array[i]];
-  }
-}
+// function shuffle(array){
+//   for(let i = array.length-1; i>0; i--){
+//     const random = Math.floor(Math.random() * (i+1)); 
+//     [array[i],array[random]] = [array[random],array[i]];
+//   }
+// }
 
-//Date Objects
-//const date = new Date(2024, 10, 4, 7, 49, 4);
-const date = new Date();
-const year =  date.getFullYear();
-const month = date.getMonth();
-const day = date.getDate();
-const hour = date.getHours();
-const minutes = date.getMinutes();
-const sec  = date.getSeconds();
-const dayOfWeek = date.getDay();
+// //Date Objects
+// //const date = new Date(2024, 10, 4, 7, 49, 4);
+// const date = new Date();
+// const year =  date.getFullYear();
+// const month = date.getMonth();
+// const day = date.getDate();
+// const hour = date.getHours();
+// const minutes = date.getMinutes();
+// const sec  = date.getSeconds();
+// const dayOfWeek = date.getDay();
 
-console.log(year + " "+ month + " " +day + " " +hour + " " +minutes + " " + sec + " "+ dayOfWeek);
+// console.log(year + " "+ month + " " +day + " " +hour + " " +minutes + " " + sec + " "+ dayOfWeek);
 
 // closure = A function defined inside of a function. The inner function has access to the variables
 // and scope of the outer function.
@@ -971,55 +971,80 @@ console.log(year + " "+ month + " " +day + " " +hour + " " +minutes + " " + sec 
 //Used frequently in JS frameworks
 //Maintains the state of the variable and makes it private
 
-function outer(){
-  let message = "This is my message to you";
-  function print(){
-    console.log(message);
-  }
-  print();
+// function outer(){
+//   let message = "This is my message to you";
+//   function print(){
+//     console.log(message);
+//   }
+//   print();
+// }
+// outer();
+
+// function counter(){
+//   let count = 0;
+//   function increment(){
+//     count++;
+//     console.log(`Count increased to ${count}`)
+//   }
+
+//   function getCount(){
+//     return count;
+//   }
+//   return {increment, getCount};
+// }
+
+// const myCount = counter();
+// myCount.increment();
+// myCount.increment();
+// myCount.increment();
+
+// console.log(myCount.getCount());
+// function keepScore(){
+//   let score = 0;
+
+//   function increaseScore(points){
+//     score += points;
+//     console.log(`+${points} points.`);
+//   }
+
+//   function decareaseScore(points){
+//     score -= points;
+//     console.log(`-${points} points.`);
+//   }
+
+//   function getScore(){
+//     return score;
+//   }
+//   return {increaseScore, decareaseScore, getScore};
+// }
+
+// const theScore = new keepScore();
+// theScore.increaseScore(5);
+// theScore.decareaseScore(6);
+// theScore.increaseScore(5);
+// console.log(`The final score is ${theScore.getScore()}`);
+
+//SetTimeout() method - function in JS that allows you to schedule the execution of a program
+// in milliseconds. Times are appropriate based on the workload of the Java Runtime environment
+// setTimeout(callBack, delay)
+
+// function sayHello(){
+//   window.alert("Hello");
+// }
+// setTimeout(function(){window,alert("Hello2")}, 3000);
+
+// setTimeout(()=>window.alert("Hello3"), 3000);
+
+//const timeoutId = setTimeout(function(){window,alert("Hello2")}, 3000);
+//clearTimeout(timeoutId);
+let timeoutId; 
+
+function startTimer(){
+  timeoutId =  setTimeout(() => window.alert("Hello"), 3000);
+  console.log("Started");
 }
-outer();
 
-function counter(){
-  let count = 0;
-  function increment(){
-    count++;
-    console.log(`Count increased to ${count}`)
-  }
-
-  function getCount(){
-    return count;
-  }
-  return {increment, getCount};
+function clearTimer(){
+  clearTimeout(timeoutId);
+  console.log("Cleared");
 }
-
-const myCount = counter();
-myCount.increment();
-myCount.increment();
-myCount.increment();
-
-console.log(myCount.getCount());
-function keepScore(){
-  let score = 0;
-
-  function increaseScore(points){
-    score += points;
-    console.log(`+${points} points.`);
-  }
-
-  function decareaseScore(points){
-    score -= points;
-    console.log(`-${points} points.`);
-  }
-
-  function getScore(){
-    return score;
-  }
-  return {increaseScore, decareaseScore, getScore};
-}
-
-const theScore = new keepScore();
-theScore.increaseScore(5);
-theScore.decareaseScore(6);
-theScore.increaseScore(5);
-console.log(`The final score is ${theScore.getScore()}`);
