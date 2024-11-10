@@ -1037,14 +1037,24 @@ console.log(students);*/
 
 //const timeoutId = setTimeout(function(){window,alert("Hello2")}, 3000);
 //clearTimeout(timeoutId);
-let timeoutId; 
+// let timeoutId; 
 
-function startTimer(){
-  timeoutId =  setTimeout(() => window.alert("Hello"), 3000);
-  console.log("Started");
-}
+// function startTimer(){
+//   timeoutId =  setTimeout(() => window.alert("Hello"), 3000);
+//   console.log("Started");
+// }
 
-function clearTimer(){
-  clearTimeout(timeoutId);
-  console.log("Cleared");
-}
+// function clearTimer(){
+//   clearTimeout(timeoutId);
+//   console.log("Cleared");
+// }
+
+//ES6 Modules
+ import {PI, getArea, getCircumference, getVolume} from './mathUtil.js';
+ console.log(PI);
+ const area = getArea(6);
+ const circumference = getCircumference(10);
+ const vol = getVolume(6);
+ console.log(`${circumference} cm`);
+ console.log(`${area.toFixed(2)} sq.cm`);
+ console.log(`${vol.toFixed(2)} cu.cm`);
