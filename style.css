@@ -1,25 +1,55 @@
 body{
-    background-image: url(thousand-sunny-one-piece.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin:0;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: beige;
+
 }
-#clock-container{
+#myh1{
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(19, 59, 59);
+}
+#container{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    border: 2px solid;
-    height: 100vh;
+    padding: 30px;
+    border: 5px solid;
+    border-radius: 50px;
+    background-color: rgb(218, 229, 219);
 }
-#clock{
-    font-size: 7rem;
+
+#display{
+    font-size: 5rem;
     font-family: monospace;
-    text-align: center;
     font-weight: bold;
-    color: white; 
-    backdrop-filter: blur(15px);
-    width: 100%;
-    background-color: rgba(128, 128, 128, 0.392);
+    color: rgb(23, 33, 33);
+    text-shadow: 2px, 2px, 2px, hsla(0, 0%, 0%, 0.75);
+}
+
+#controls button{
+    font-size: 2.0rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 125px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: rgb(131, 28, 19);
+    background-color: bisque;
+    transition: background-color 0.5s ease;
+}
+
+#startbtn:hover{
+    background-color: rgb(10, 120, 120);
+}
+
+#stopbtn:hover{
+    background-color: rgb(237, 16, 16);
+}
+
+#resetbtn:hover{
+    background-color: rgb(46, 93, 220);
 }
