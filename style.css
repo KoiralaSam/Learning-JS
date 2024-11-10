@@ -1,35 +1,25 @@
-#container{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    font-size: 2em;
-    font-weight: bold;
+body{
+    background-image: url(thousand-sunny-one-piece.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin:0;
 }
-button{
-    font-size: 1.5em;
-    padding: 10px 15px;
-    border-radius: 10px;
-    border: none;
-    background-color: rgb(41, 177, 214);
-    color:rgb(5, 48, 84);
-    font-weight: bold;
-    cursor: pointer;
+#clock-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    height: 100vh;
 }
-button:hover{
-    background-color: aqua;
-}
-button:active{
-    background-color: aquamarine;
-}
-input{
-    font-size: 2rem;
-    width: 150px;
+#clock{
+    font-size: 7rem;
+    font-family: monospace;
     text-align: center;
     font-weight: bold;
-}
-#diceResult{
-    margin: 25px;
-}
-#diceImages img{
-    width: 155px;
-    margin: 5px;
+    color: white; 
+    backdrop-filter: blur(15px);
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.392);
 }
