@@ -1050,11 +1050,74 @@ console.log(students);*/
 // }
 
 //ES6 Modules
- import {PI, getArea, getCircumference, getVolume} from './mathUtil.js';
- console.log(PI);
- const area = getArea(6);
- const circumference = getCircumference(10);
- const vol = getVolume(6);
- console.log(`${circumference} cm`);
- console.log(`${area.toFixed(2)} sq.cm`);
- console.log(`${vol.toFixed(2)} cu.cm`);
+//  import {PI, getArea, getCircumference, getVolume} from './mathUtil.js';
+//  console.log(PI);
+//  const area = getArea(6);
+//  const circumference = getCircumference(10);
+//  const vol = getVolume(6);
+//  console.log(`${circumference} cm`);
+//  console.log(`${area.toFixed(2)} sq.cm`);
+//  console.log(`${vol.toFixed(2)} cu.cm`);
+
+//synchronous code: Executes line by line consecutively in a sequential manner
+//                     code that waits for an operation to complete
+
+// Asunchronous code: Allows multiple operations to be perfomed concurrently without waiting 
+//          Doesnt block the execution flow and allows the program to continue
+//          (I/o operations, network requests, fetching data)
+//          Handled with: Callbakcs, promises, Async/Await
+
+function func1(callback){
+  setTimeout(()=>{console.log("Task1");
+                  callback(),3000}
+  );
+}
+function func2(){
+  console.log("Task2");
+  console.log("Task3");
+}
+
+func1(func2);
+
+//Error =  an object that is created to represent a problem that occurs
+//          Occurs often with user input or establishing a connection
+
+// try{} = Encloses code that might potentiallty cause an error
+// catch{} = catch and handle any thrown Errors from try{}
+//finally{} = {optional} always executes. Used mostly for clean up
+//            Ex. close finlesm closse connection, release resources 
+try{
+  //Network Errors
+  //Promise rejection
+  //Security Errors
+  console.log("Hello");
+}
+catch(error){
+  console.error(error);
+}
+
+finally{
+  //closes files
+  //close connections
+  //Release resources
+  console.log("This always executes");
+}
+
+console.log("You have reached the end");
+try{
+  const divident = Number(window.prompt("Enter an divident"));
+  const divisor = Number(window.prompt("Enter an divisor"));
+
+  if(isNaN(divisor)||isNaN(divident)){
+    throw new Error("Invalid Divident or Divisor");
+  }
+  if(divisor==0){
+    throw new Error("You can divide by Zero");
+  }
+  const result = divident/divisor;
+  console.log(result);
+}
+catch(error){
+  console.error(error);
+}
+console.log("You have reached the end");
