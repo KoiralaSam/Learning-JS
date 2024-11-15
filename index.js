@@ -1067,57 +1067,115 @@ console.log(students);*/
 //          (I/o operations, network requests, fetching data)
 //          Handled with: Callbakcs, promises, Async/Await
 
-function func1(callback){
-  setTimeout(()=>{console.log("Task1");
-                  callback(),3000}
-  );
+// function func1(callback){
+//   setTimeout(()=>{console.log("Task1");
+//                   callback(),3000}
+//   );
+// }
+// function func2(){
+//   console.log("Task2");
+//   console.log("Task3");
+// }
+
+//  func1(func2);
+
+// //Error =  an object that is created to represent a problem that occurs
+// //          Occurs often with user input or establishing a connection
+
+// // try{} = Encloses code that might potentiallty cause an error
+// // catch{} = catch and handle any thrown Errors from try{}
+// //finally{} = {optional} always executes. Used mostly for clean up
+// //            Ex. close finlesm closse connection, release resources 
+// try{
+//   //Network Errors
+//   //Promise rejection
+//   //Security Errors
+//   console.log("Hello");
+// }
+// catch(error){
+//   console.error(error);
+// }
+
+// finally{
+//   //closes files
+//   //close connections
+//   //Release resources
+//   console.log("This always executes");
+// }
+
+// console.log("You have reached the end");
+// try{
+//   const divident = Number(window.prompt("Enter an divident"));
+//   const divisor = Number(window.prompt("Enter an divisor"));
+
+//   if(isNaN(divisor)||isNaN(divident)){
+//     throw new Error("Invalid Divident or Divisor");
+//   }
+//   if(divisor==0){
+//     throw new Error("You can divide by Zero");
+//   }
+//   const result = divident/divisor;
+//   console.log(result);
+// }
+// catch(error){
+//   console.error(error);
+// }
+// console.log("You have reached the end");
+
+//DOM -  Document Object model
+//JavaScript allows the dynamic change of the html document model
+//DOM object represents the page you see in web browser. DOM is loaded by the web bowser which you can use to dynamically change
+//the content, structure and style of a webPage.
+
+//Element Selectors = Methods used to target and manipulate  HTml elements. They allow
+// you to select one or multiple elements from the DOM
+
+//document.getElemenyById() RETURNS ELEMENT OR NULL
+// document.getElementsByClassName(); RETURNS HTML collection
+// document.getElementsByTagName();RETURNS HTML collection
+// document.querySelector(); First Element or null
+// document.querySelectorAll(); NodeList
+//
+
+//get Element by id
+const myHeading = document.getElementById("my-heading");
+myHeading.style.backgroundColor = "yellow";
+myHeading.style.textAlign = "center";
+console.log(myHeading);
+
+// //GET ELEMENT BY CLASS NAME
+const fruits = document.getElementsByClassName("fruits");
+
+for(let fruit of fruits){
+    fruit.style.backgroundColor = "yellow";
 }
-function func2(){
-  console.log("Task2");
-  console.log("Task3");
+console.log(fruits);
+
+Array.from(fruits).forEach((Element)=>  Element.style.backgroundColor = "yellow");
+
+
+// //GET ELEMENT BY TAGNAME
+const h4Elements = document.getElementsByTagName("h4");
+
+for(let h4Element of h4Elements){
+    h4Element.style.backgroundColor = "yellow";
 }
 
-func1(func2);
+const liElements = document.getElementsByTagName("li");
 
-//Error =  an object that is created to represent a problem that occurs
-//          Occurs often with user input or establishing a connection
-
-// try{} = Encloses code that might potentiallty cause an error
-// catch{} = catch and handle any thrown Errors from try{}
-//finally{} = {optional} always executes. Used mostly for clean up
-//            Ex. close finlesm closse connection, release resources 
-try{
-  //Network Errors
-  //Promise rejection
-  //Security Errors
-  console.log("Hello");
-}
-catch(error){
-  console.error(error);
+for(let liElement of liElements){
+    liElement.style.backgroundColor = "lightgreen";
 }
 
-finally{
-  //closes files
-  //close connections
-  //Release resources
-  console.log("This always executes");
-}
+Array.from(h4Elements).forEach((Element)=>Element.style.backgroundColor = "blue");
 
-console.log("You have reached the end");
-try{
-  const divident = Number(window.prompt("Enter an divident"));
-  const divisor = Number(window.prompt("Enter an divisor"));
+// //QUERY SELECTOR
+const element  = document.querySelector(".fruits");
+element.style.backgroundColor = "darkgreen";
 
-  if(isNaN(divisor)||isNaN(divident)){
-    throw new Error("Invalid Divident or Divisor");
-  }
-  if(divisor==0){
-    throw new Error("You can divide by Zero");
-  }
-  const result = divident/divisor;
-  console.log(result);
-}
-catch(error){
-  console.error(error);
-}
-console.log("You have reached the end");
+//QUERY SELECTOR ALL
+const foods = document.querySelectorAll("li");
+foods[5].style.backgroundColor = "yellow";
+
+const foods = document.querySelectorAll("li");
+foods.forEach((Element)=> Element.style.backgroundColor = "yellow");
