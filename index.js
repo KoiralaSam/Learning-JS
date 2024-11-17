@@ -1137,45 +1137,73 @@ console.log(students);*/
 // document.querySelectorAll(); NodeList
 //
 
-//get Element by id
-const myHeading = document.getElementById("my-heading");
-myHeading.style.backgroundColor = "yellow";
-myHeading.style.textAlign = "center";
-console.log(myHeading);
+// //get Element by id
+// const myHeading = document.getElementById("my-heading");
+// myHeading.style.backgroundColor = "yellow";
+// myHeading.style.textAlign = "center";
+// console.log(myHeading);
 
-// //GET ELEMENT BY CLASS NAME
-const fruits = document.getElementsByClassName("fruits");
+// // //GET ELEMENT BY CLASS NAME
+// const fruits = document.getElementsByClassName("fruits");
 
-for(let fruit of fruits){
-    fruit.style.backgroundColor = "yellow";
-}
-console.log(fruits);
+// for(let fruit of fruits){
+//     fruit.style.backgroundColor = "yellow";
+// }
+// console.log(fruits);
 
-Array.from(fruits).forEach((Element)=>  Element.style.backgroundColor = "yellow");
+// Array.from(fruits).forEach((Element)=>  Element.style.backgroundColor = "yellow");
 
 
-// //GET ELEMENT BY TAGNAME
-const h4Elements = document.getElementsByTagName("h4");
+// // //GET ELEMENT BY TAGNAME
+// const h4Elements = document.getElementsByTagName("h4");
 
-for(let h4Element of h4Elements){
-    h4Element.style.backgroundColor = "yellow";
-}
+// for(let h4Element of h4Elements){
+//     h4Element.style.backgroundColor = "yellow";
+// }
 
-const liElements = document.getElementsByTagName("li");
+// const liElements = document.getElementsByTagName("li");
 
-for(let liElement of liElements){
-    liElement.style.backgroundColor = "lightgreen";
-}
+// for(let liElement of liElements){
+//     liElement.style.backgroundColor = "lightgreen";
+// }
 
-Array.from(h4Elements).forEach((Element)=>Element.style.backgroundColor = "blue");
+// Array.from(h4Elements).forEach((Element)=>Element.style.backgroundColor = "blue");
 
-// //QUERY SELECTOR
-const element  = document.querySelector(".fruits");
-element.style.backgroundColor = "darkgreen";
+// // //QUERY SELECTOR
+// const element  = document.querySelector(".fruits");
+// element.style.backgroundColor = "darkgreen";
 
-//QUERY SELECTOR ALL
-const foods = document.querySelectorAll("li");
-foods[5].style.backgroundColor = "yellow";
+// //QUERY SELECTOR ALL
+// const foods = document.querySelectorAll("li");
+// foods[5].style.backgroundColor = "yellow";
 
-const foods = document.querySelectorAll("li");
-foods.forEach((Element)=> Element.style.backgroundColor = "yellow");
+// const foods = document.querySelectorAll("li");
+// foods.forEach((Element)=> Element.style.backgroundColor = "yellow");
+
+// //...............   first Element Child................
+// const element = document.getElementById("desserts");
+// // const firstChild = element.firstElementChild;
+// // firstChild.style.backgroundColor = "yellow";
+
+// const ulElements = document.querySelectorAll("ul");
+// ulElements.forEach((element)=> element.firstElementChild.style.backgroundColor = "yellow");
+
+
+// //...............   last Element Child................
+// const fruitarr = document.querySelectorAll("ul");
+// fruitarr.forEach((element)=>element.lastElementChild.style.backgroundColor = "orange")
+
+//...............   next sibling................
+const fruitSibling = document.getElementById("vegetables");
+const nextSibling = fruitSibling.nextElementSibling;
+nextSibling.style.backgroundColor = "green";
+
+//...............   Parent Element................
+const element = document.getElementById("Broccoli");
+const parent  = element.parentElement;
+parent.style.backgroundColor = "orange";
+
+//...............   Child Element................
+const elements = document.getElementById("fruits");
+const child  = elements.children;
+Array.from(child).forEach((element)=>element.style.backgroundColor = "skyblue")
