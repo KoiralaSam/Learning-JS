@@ -1180,6 +1180,8 @@ console.log(students);*/
 // const foods = document.querySelectorAll("li");
 // foods.forEach((Element)=> Element.style.backgroundColor = "yellow");
 
+
+//  DOM NAVIGATION
 // //...............   first Element Child................
 // const element = document.getElementById("desserts");
 // // const firstChild = element.firstElementChild;
@@ -1193,17 +1195,67 @@ console.log(students);*/
 // const fruitarr = document.querySelectorAll("ul");
 // fruitarr.forEach((element)=>element.lastElementChild.style.backgroundColor = "orange")
 
-//...............   next sibling................
-const fruitSibling = document.getElementById("vegetables");
-const nextSibling = fruitSibling.nextElementSibling;
-nextSibling.style.backgroundColor = "green";
+// //...............   next sibling................
+// const fruitSibling = document.getElementById("vegetables");
+// const nextSibling = fruitSibling.nextElementSibling;
+// nextSibling.style.backgroundColor = "green";
 
-//...............   Parent Element................
-const element = document.getElementById("Broccoli");
-const parent  = element.parentElement;
-parent.style.backgroundColor = "orange";
+// //...............   Parent Element................
+// const element = document.getElementById("Broccoli");
+// const parent  = element.parentElement;
+// parent.style.backgroundColor = "orange";
 
-//...............   Child Element................
-const elements = document.getElementById("fruits");
-const child  = elements.children;
-Array.from(child).forEach((element)=>element.style.backgroundColor = "skyblue")
+// //...............   Child Element................
+// const elements = document.getElementById("fruits");
+// const child  = elements.children;
+// Array.from(child).forEach((element)=>element.style.backgroundColor = "skyblue")
+
+//Add and Change Element
+
+//Adding Elements
+//Create the Element
+// const newh1 = document.createElement("h1");
+
+// //Add Attributes and Properties
+// newh1.textContent = "I Like Pizza";
+// newh1.id = "myh1";
+// newh1.style.color = "tomato";
+// newh1.style.textAlign = "center";
+
+
+// //Append the element to the DOM
+//  //document.body.append(newh1);
+// // document.body.prepend(newh1);
+//  document.getElementById("box1").append(newh1);
+// // document.getElementById("box1").prepend(newh1);
+
+// // const boxes = document.querySelectorAll(".box");
+// // document.body.insertBefore(newh1, boxes[1]);
+
+// // const box2 = document.getElementById("box2");
+// // document.body.insertBefore(newh1, box2);
+
+// //Removing Element
+// document.getElementById("box1").removeChild(newh1);
+
+const mybox = document.querySelector("#mybox");
+const myButton = document.querySelector("#myButton");
+
+function changeColor(event){
+    
+}
+
+myButton.addEventListener("click", event=> {
+    mybox.backgroundColor = "red";
+    mybox.textContent = "Ouch 😫"
+});
+
+myButton.addEventListener("mouseover",(event)=>{
+    mybox.style.backgroundColor = "yellow";
+    mybox.textContent = "Don't do it! 😵‍💫"
+});
+
+myButton.addEventListener("mouseout",(event)=>{
+    mybox.style.backgroundColor = "yellow";
+    mybox.textContent = "Just do it! 😵‍💫"
+});
