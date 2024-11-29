@@ -1302,18 +1302,35 @@ console.log(students);*/
 //     }
 // });
 
-//Hide/Show html elements
-const myButton = document.getElementById("myButton");
-const myImg = document.getElementById("myImg");
-console.log(myImg);
-myButton.addEventListener("click", event => {
-    if(myImg.style.visibility == "hidden"){
-        myImg.style.visibility = "visible";
-        myButton.textContent = "Hide";
-    }
-    else{
-        myImg.style.visibility = "hidden";
-        myButton.textContent = "Show";
-    }
+// //Hide/Show html elements
+// const myButton = document.getElementById("myButton");
+// const myImg = document.getElementById("myImg");
+// console.log(myImg);
+// myButton.addEventListener("click", event => {
+//     if(myImg.style.visibility == "hidden"){
+//         myImg.style.visibility = "visible";
+//         myButton.textContent = "Hide";
+//     }
+//     else{
+//         myImg.style.visibility = "hidden";
+//         myButton.textContent = "Show";
+//     }
     
-});
+// });
+
+let buttons  = document.querySelectorAll(".Button");
+
+const newButton = document.createElement("button");
+newButton.textContent = "Button5";
+newButton.classList = "Button";
+document.body.appendChild(newButton);
+buttons = document.querySelectorAll(".Button");
+console.log(buttons);
+
+buttons.forEach((button)=>{
+    button.addEventListener("click", (event)=>{
+        event.target.remove();
+        buttons = document.querySelectorAll(".Button");
+        console.log(buttons);
+    });
+})
